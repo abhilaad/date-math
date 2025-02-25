@@ -278,8 +278,9 @@ function createAccessor(method){
   })(method);
   
   return function(d, val){
+    console.log("Samplemethod", method)
     if (val === undefined)
-      return d['get' + method]()
+      return d?.['get' + method]?.()
 
     var dateOut = new Date(d)
     dateOut['set' + method](val)
